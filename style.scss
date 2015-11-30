@@ -1,0 +1,152 @@
+.container{
+  padding: 80px 120px;
+}
+$border: 10px solid transparent;
+.person{
+  border:$border;
+  margin-bottom: 25px;
+  width: 80%;
+  height: 80%;
+  opacity: 0.7;
+  &:hover{
+    border-color: #f1f1f1;
+  }
+}
+@mixin filter($filter...){
+  -webkit-filter: $filter;
+          filter: $filter;  }
+.carousel-inner{
+  img{
+    @include filter(grayscale(90%));
+    width: 100%;
+    margin: auto;
+  }
+
+}
+.carousel-caption{
+  h3{
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    &{
+      display: none;
+    }
+  }
+}
+.bg-1{
+  background: #2d2d30;
+  color: #bdbdbd;
+  h3{
+    color: #fff;
+}
+  p{
+    font-style: italic;
+  }
+}
+
+
+
+.list-group-item{
+  &:first-child{
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  &:last-child{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+//remove border and add padding to thumbnail
+.thumbnail{
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+  p{
+    margin-top: 15px;
+    color: #555;
+  }
+}
+//black button with extra padding and without rounded borders
+.btn{
+  padding: 10px 20px;
+  background-color: #333;
+  color: #f1f1f1;
+  border-radius: 0;
+  transition: .2s;
+  //On hover, the color of .btn will transition to white with black text
+  %btn{
+    border:1px solid #333;
+    background-color: #fff;
+    color: #000;
+  }
+
+  &:hover,&:focus {
+    @extend %btn;
+  }
+
+}
+.modal-header,h4, .close{
+  background-color: #333;
+  color: #fff !important;
+  text-align: center;
+  font-size: 30px;
+}
+#googleMap{
+  @include filter(grayscale(100%));
+  width: 100%;
+  height: 400px;
+}
+.navbar{
+  margin-top: 0;
+  background-color: #2d2d30;
+  border: 0;
+  font-size: 11px !important;
+  letter-spacing: 4px;
+  opacity: 0.9;
+  li {
+    a{
+      color: #d5d5d5;
+      &:hover{
+        color: #fff !important;
+      }
+    }
+  }
+  .navbar-brand{
+    @extend li;
+  }
+}
+.navbar-nav{
+  li.active a{
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+}
+.navbar-default .navbar-toggle{
+  border-color: transparent;
+}
+.open .dropdown-toggle{
+  color: #fff;
+  background-color: #555 !important;
+}
+.dropdown-menu li a{
+  color: #000 !important;
+  &:hover{
+    background-color: red !important;
+  }
+}
+footer{
+  background-color: #2d2d30;
+  color: #f5f5f5;
+  padding: 32px;
+  a{
+    color: #f5f5f5;
+  }
+  a:hover{
+    color: #777;
+    text-decoration: none;
+  }
+}
+body{
+  font: 400 15px/1.8 Lato, sans-serif;
+  color: #777777;
+}
